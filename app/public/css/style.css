@@ -1,0 +1,38 @@
+/* STICKY FOOTER STYLES */
+html {
+	position: relative;
+  	min-height: 100%;
+}
+body {
+  	/* Margin bottom by footer height */
+  	margin-bottom: 100px;
+}
+.footer {
+	text-align: center;
+	position: absolute;
+	font-size: 12px;
+	bottom: 0;
+ 	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 70px;
+	/* Vertically center the text by making line height same as footer height */
+	line-height: 70px;
+	background-color: #90caf9;
+	color: white;
+}	
+
+.footerLinks {
+	color: white;
+}
+/* OTHE PAGE STYLES */
+hr.horizontalrule {
+	border-top: .75px solid #bbdefb;
+}
+
+#homeHeader {
+	margin-top: 70px;
+}
+
+#surveyButton {
+	margin-top: 20px;
+}
