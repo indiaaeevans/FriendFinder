@@ -1,11 +1,3 @@
-// constructor to save user data
-function user(name, photo, survey){
-	this.name = name,
-	this.photo = photo,
-	this.survey = survey
-}
-
-
 // Friends (DATA)
 // =============================================================
 var friends = [
