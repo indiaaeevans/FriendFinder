@@ -183,9 +183,11 @@
 		// send the object to the friends data
 		$.post("/api/friends", newUser, function(data) {
 			if (data) {
-				alert("new user added");
+				alert("Your profile has been saved!  Now let's find a match.");
 			}
         });
+
+        compareUsers();
 
         // Clear the form after submitting
         clearForm();
@@ -214,15 +216,45 @@
 		select.material_select();
 	}
 
-
-	function friendQuery() {
+	function compareUsers() {
 		var currentURL = window.location.origin;
-		$.ajax({url: currentURL + "/api/friends", method: "GET"})
-			.done(function(friends) {
+	 // compare the difference between current user's scores against those from other users, 
+	 // question by question. sum of differences (absolute value) will give us totalDifference
+	 	$.ajax({url: currentURL + "/api/friends", method: "GET"})
+		.done(function(friends){
 
-				console.log("URL: " + "/api/friends");
-				
-		})
+			var userIndex = friends.length - 1;
+			var differenceArray = [];
+			var totalDifference = 0;
+			// loop through the friends array (excluding current user)
+			for (let i = 0; i < userIndex; i++){
+				// loop through each survey question
+		 		for (let q = 0; q < friends[userIndex].survey.length; q++){
+		 			totalDifference += Math.abs(friends[userIndex].survey[q] - friends[i].survey[q]);
+		 		}
+		 		// save to an array which we will sort later
+		 		differenceArray.push(totalDifference);
+
+		 		console.log(totalDifference);
+		 		// reset to 0 for the next loop
+		 		totalDifference = 0;
+		 	}
+		 	// find a "match" (smallest total difference) using the array we created
+		 	var matchScore = findMatch(differenceArray);
+			matchIndex = differenceArray.indexOf(matchScore);
+
+
+			console.log("current user: ");
+			console.log(friends[userIndex].name);
+			console.log("match: ");
+			console.log(friends[matchIndex].name);
+		});
+
+	}
+	// The closest match will be the user with the least amount of difference
+	// function will return the item with smallest value from the array
+	function findMatch(array) {
+		return Math.min.apply(null, array);
 	}
 
 </script>
