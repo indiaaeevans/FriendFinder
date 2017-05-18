@@ -112,8 +112,8 @@
 </form>
 
 <div class="row">
-<!-- SUBMIT BUTTON -->
-	<button class="col s6 btn waves-effect waves-light light-blue accent-3 disabled"
+<!-- SUBMIT BUTTON / Modal Trigger -->
+	<button data-target="modal1" class="col s6 btn waves-effect waves-light light-blue accent-3 disabled"
 	type="submit" id="submit" name="action">Submit<i class="material-icons right">input</i>
 	</button>
 <!-- CLEAR FORM BUTTON -->
@@ -121,6 +121,17 @@
 	type="submit" id="clear" name="action">Clear<i class="material-icons right">clear_all</i>
 	</button>	
 </div>
+
+<!-- MODAL (appears after match is found) -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 id="displayUser"></h4>
+      <p id="displayMatch"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
 
 </div>
 <!-- Sticky Footer -->
@@ -132,9 +143,13 @@
     </footer>
 
 <script type="text/javascript">
-	// initialize the form (materialize)
+	// (functions needed to intitiate materialize)
 	$(document).ready(function() {
+		// initialize the form
 	    $('select').material_select();
+	    // initialize the modal 
+	    // "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    	$('.modal').modal();
 	});
 
 	// submit button is disabled until all questions are answered
@@ -183,7 +198,7 @@
 		// send the object to the friends data
 		$.post("/api/friends", newUser, function(data) {
 			if (data) {
-				alert("Your profile has been saved!  Now let's find a match.");
+				console.log("User profile has been saved!");
 			}
         });
 
@@ -226,6 +241,7 @@
 			var userIndex = friends.length - 1;
 			var differenceArray = [];
 			var totalDifference = 0;
+			var userName = friends[userIndex].name;
 			// loop through the friends array (excluding current user)
 			for (let i = 0; i < userIndex; i++){
 				// loop through each survey question
@@ -243,11 +259,11 @@
 		 	var matchScore = findMatch(differenceArray);
 			matchIndex = differenceArray.indexOf(matchScore);
 
-
-			console.log("current user: ");
-			console.log(friends[userIndex].name);
-			console.log("match: ");
-			console.log(friends[matchIndex].name);
+			// display the result as a modal pop-up
+			$("#displayUser").text(userName + ", you matched with...");
+			$("#displayMatch").text(friends[matchIndex].name);
+			var matchImage = $("<img src=" + friends[matchIndex].photo + ">");
+			$(".modal-content").append(matchImage);
 		});
 
 	}
