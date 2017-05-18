@@ -24,7 +24,8 @@ body {
 .footerLinks {
 	color: white;
 }
-/* OTHE PAGE STYLES */
+
+/* OTHER PAGE STYLES */
 hr.horizontalrule {
 	border-top: .75px solid #bbdefb;
 }
@@ -35,4 +36,13 @@ hr.horizontalrule {
 
 #surveyButton {
 	margin-top: 20px;
+}
+
+.modal-content {
+	text-align: center;
+}
+
+.friendImages {
+	width: 300px;
+	height: auto;
 }

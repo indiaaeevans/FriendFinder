@@ -263,6 +263,7 @@
 			$("#displayUser").text(userName + ", you matched with...");
 			$("#displayMatch").text(friends[matchIndex].name);
 			var matchImage = $("<img src=" + friends[matchIndex].photo + ">");
+			matchImage.addClass("friendImages");
 			$(".modal-content").append(matchImage);
 		});
 
