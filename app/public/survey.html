@@ -5,7 +5,6 @@
 	<title>Survey</title>
 	<!--Import Google Font Material Icons-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 	<!-- Compiled and minified CSS -->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -42,73 +41,73 @@
     </form>
   </div>
 
-	<!-- Survey Questions -->
+<!-- Survey Questions -->
 <form id="form">
-<div class="row">
-	<div class="input-field col s12">
-    <select id="q1">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <label>Your mind is always buzzing with unexplored ideas and plans.</label>
-  </div>
-</div>
-<div class="row">
-	<div class="input-field col s12">
-    <select id="q2">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <label>Generally speaking, you rely more on your experience than your imagination.</label>
-  </div>
-</div>
-<div class="row">
-	<div class="input-field col s12">
-    <select id="q3">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <label>You find it easy to stay relaxed and focused even when there is some pressure.</label>
-  </div>
-</div>
-<div class="row">
-	<div class="input-field col s12">
-    <select id="q4">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <label>You rarely do something just out of sheer curiosity.</label>
-  </div>
-</div>
-<div class="row">
-	<div class="input-field col s12">
-    <select id="q5">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5 (Strongly Agree)</option>
-    </select>
-    <label>People can rarely upset you.</label>
-  </div>
-</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <select id="q1">
+	      <option value="" disabled selected>Choose your option</option>
+	      <option value="1">1 (Strongly Disagree)</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5 (Strongly Agree)</option>
+	    </select>
+	    <label>Your mind is always buzzing with unexplored ideas and plans.</label>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <select id="q2">
+	      <option value="" disabled selected>Choose your option</option>
+	      <option value="1">1 (Strongly Disagree)</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5 (Strongly Agree)</option>
+	    </select>
+	    <label>Generally speaking, you rely more on your experience than your imagination.</label>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <select id="q3">
+	      <option value="" disabled selected>Choose your option</option>
+	      <option value="1">1 (Strongly Disagree)</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5 (Strongly Agree)</option>
+	    </select>
+	    <label>You find it easy to stay relaxed and focused even when there is some pressure.</label>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <select id="q4">
+	      <option value="" disabled selected>Choose your option</option>
+	      <option value="1">1 (Strongly Disagree)</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5 (Strongly Agree)</option>
+	    </select>
+	    <label>You rarely do something just out of sheer curiosity.</label>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+	    <select id="q5">
+	      <option value="" disabled selected>Choose your option</option>
+	      <option value="1">1 (Strongly Disagree)</option>
+	      <option value="2">2</option>
+	      <option value="3">3</option>
+	      <option value="4">4</option>
+	      <option value="5">5 (Strongly Agree)</option>
+	    </select>
+	    <label>People can rarely upset you.</label>
+	  </div>
+	</div>
 </form>
 
 <div class="row">
@@ -122,16 +121,16 @@
 	</button>	
 </div>
 
-<!-- MODAL (appears after match is found) -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 id="displayUser"></h4>
-      <h2 id="displayMatch"></h2>
+<!-- MODAL (appears after a match is found) -->
+<div id="modal1" class="modal">
+	<div class="modal-content">
+    	<h4 id="displayUser"></h4>
+    	<h2 id="displayMatch"></h2>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
-  </div>
+</div>
 
 </div>
 <!-- Sticky Footer -->
